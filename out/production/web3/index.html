@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Multiplication Table</title>
+        <link rel="stylesheet" href="../kotlin/Variant/Variant2.css">
+    </head>
+    <body>
+        <h1 class="title">Multiplication Table</h1>
+        <table id="multiplicationTable">
+            <thead>
+                <tr>
+                    <th>&times;</th>
+                    <!-- ヘッダーの生成 -->
+                    <script>
+                        for (let i = 1; i <= 12; i++) {
+                            document.write('<th>' + i + '</th>');
+                        }
+                    </script>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 表の本体の生成 -->
+                <script>
+                    for (let i = 1; i <= 12; i++) {
+                        document.write('<tr>');
+                        document.write('<td>' + i + '</td>');
+                        for (let j = 1; j <= 12; j++) {
+                            document.write('<td>' + (i * j) + '</td>');
+                        }
+                        document.write('</tr>');
+                    }
+                </script>
+            </tbody>
+        </table>
+    </body>
+</html>

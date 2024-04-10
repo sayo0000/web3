@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <link rel="stylesheet" href="css/variant2.css">
+</head>
+<body>
+<h1 class="title">Multiplication Table</h1>
+<table id="grid"></table>
+
+<!-- 表の本体の生成 -->
+<script>
+    fetch('/api/grid')
+        .then(response => response.json())
+        .then(grid => {
+            const table = document.getElementById('grid');
+            grid.forEach(row => {
+                const tr = document.createElement('tr');
+                row.forEach(cell => {
+                    const td = document.createElement('td');
+                    td.textContent = cell;
+                    tr.appendChild(td);
+                });
+                table.appendChild(tr);
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+/* 1列目のセル */
+th:first-child, td:first-child {
+    background-color: orange;
+}
+
+/* 1行目のセル */
+tr:first-child th {
+    background-color: orange;
+}
+
+.title {
+    text-align: center;
+}
